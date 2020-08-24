@@ -19,26 +19,45 @@ function getResult(a,b,c){
 };
 
 function getAverageMark(marks) {
-    let sumOfMarks;
-    let len = marks.length;
-    let averageMark = sumOfMarks / len;
-    if (len == 0) {
+    if (marks.length > 5) {
+       marks.splice(5);
+    console.log("Оценок больше, чем 5. Учитываются первые 5"); 
+    } if (marks.length == 0) {
         return 0;
-    } if (len > 0 && len <= 5) {
-        for (let i = 0; i <= 5; i++) {
-            sumOfMarks += marks[i];
-            return averageMark;
+    } 
+    let sumOfMarks = 0;
+     for (let i = 0; i < marks.length; i++) {
+            sumOfMarks += marks[i]; 
         }
-    } else if (len > 5) {
-        marks.splice(5);
-        for (let i = 0; i <= len; i++) {
-        sumOfMarks += marks[i];
-        console.log("Оценок больше, чем 5. Учитываются первые 5"); 
-        }
-    }
-    return averageMark;  
+        let averageMark = sumOfMarks / marks.length;
+        return averageMark;
 };
 
+
+
+// function getAverageMark(marks) {
+//     let sumOfMarks = 0;
+//     let len = marks.length;
+    
+//     if (len == 0) {
+//         return 0;
+//     } if (len < 6) {
+//         for (let i = 0; i < len; i++) {
+//             sumOfMarks += marks[i]; 
+//         }
+//         let averageMark = sumOfMarks / len;
+//         return averageMark;
+//     }  
+//     else if (len > 5) { 
+//         for (let i = 0; i < 5; i++) {
+//            sumOfMarks += marks[i];   
+//         }
+//         marks.splice(5);
+//         let averageMark = sumOfMarks / 5;
+//         return averageMark; 
+//         console.log("Оценок больше, чем 5. Учитываются первые 5"); 
+//     }
+// };
 
 
 
