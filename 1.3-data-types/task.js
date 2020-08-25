@@ -3,11 +3,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     if (!Number(percent))  {
         return("Параметр \"Процентная ставка\" содержит неправильное значение " + percent);
 }
-//     if (!Number(contribution)) {
-//         return(`Параметр "Сумма первоначального взноса" содержит неправильное значение ${contribution}`);
-// }
-
-// Не проходит 3 из 5 проверок. Хотя в коде всё то же самое, что и у двух других аргументов.
+    if (!Number(contribution) && Number(contribution) != 0) {
+        return(`Параметр "Сумма первоначального взноса" содержит неправильное значение ${contribution}`);
+}
 
     if (!Number(amount)) {
         return(`Параметр "Сумма кредита" содержит неправильное значение ${amount}`);
