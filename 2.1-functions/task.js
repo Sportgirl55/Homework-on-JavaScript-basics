@@ -37,3 +37,60 @@ function showSolutionsMessage( a, b, c ) {
 };
 
 
+
+
+function getAverageMark(marks) {
+  if (marks.length == 0) {
+    return 0;
+};
+    let sumOfMarks = 0;
+    for (let i = 0; i < marks.length; i++) {
+          sumOfMarks += marks[i]; 
+    }
+    let averageMark = sumOfMarks / marks.length;
+      return averageMark;
+};
+
+
+function getAverageScore(data) {  
+  if (data !== {}) {
+    return {
+    average: 0
+   }
+  } 
+
+  const arrayOfMarks = {};
+  let numberOfSubjects = 0;
+  for (let subjects in data) {
+    numberOfSubjects++;
+  }
+  let summed = 0;
+  for (let i = 0; i < arrayOfMarks.length; i++) {
+    summed += data[i];
+  }
+  let averageOfAllMarks = summed / numberOfSubjects;
+  for (let key in data)  {
+    arrayOfMarks[key] = getAverageMark(data[key]);
+    arrayOfMarks.average = averageOfAllMarks;
+  };
+  return arrayOfMarks;
+ };
+
+
+ 
+
+//  var o = {a:1, b:34, c:352} //итд.
+// function s(obj) {
+// var rez = 0;
+// for(key in obj) {
+//  rez += obj[key];
+//  }
+// return rez;
+// }
+
+// alert(s(o));
+
+
+
+
+
