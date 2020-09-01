@@ -38,7 +38,6 @@ function showSolutionsMessage( a, b, c ) {
 
 
 
-
 function getAverageMark(marks) {
   if (marks.length == 0) {
     return 0;
@@ -53,44 +52,37 @@ function getAverageMark(marks) {
 
 
 function getAverageScore(data) {  
-  if (data !== {}) {
+  if (data == {}) {
     return {
     average: 0
    }
   } 
-
-  const arrayOfMarks = {};
-  let numberOfSubjects = 0;
-  for (let subjects in data) {
-    numberOfSubjects++;
-  }
-  let summed = 0;
-  for (let i = 0; i < arrayOfMarks.length; i++) {
-    summed += data[i];
-  }
-  let averageOfAllMarks = summed / numberOfSubjects;
+  let arrayOfMarks = { };
   for (let key in data)  {
     arrayOfMarks[key] = getAverageMark(data[key]);
-    arrayOfMarks.average = averageOfAllMarks;
   };
-  return arrayOfMarks;
+  arrayOfMarks.average = getAverageMark(Object.values(arrayOfMarks));
+  console.log(getAverageMark(Object.values(arrayOfMarks)));
+   return arrayOfMarks;
  };
 
 
- 
-
-//  var o = {a:1, b:34, c:352} //итд.
-// function s(obj) {
-// var rez = 0;
-// for(key in obj) {
-//  rez += obj[key];
-//  }
-// return rez;
-// }
-
-// alert(s(o));
 
 
+function getPersonData(secretData) {
+let piratsNames = {
+    firstName: getDecodedValue(secretData.aaa), 
+    lastName: getDecodedValue(secretData.bbb)
+    }
+return piratsNames;
+ };
+
+ function getDecodedValue(secret) {
+ if (secret == 1) {
+   return ("Эмильо");
+ } if (secret === 0) 
+  return ("Родриго"); 
+ };
 
 
 
