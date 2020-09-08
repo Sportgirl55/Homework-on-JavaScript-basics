@@ -98,7 +98,7 @@ class Library {
      giveBookByName(bookName) {
           for (let key in this.books) {
                if (this.books[key].name == bookName) 
-               return this.books.pop(bookName);
+               return this.books.splice(key, 1)[0];
           }
           return null;
      }
