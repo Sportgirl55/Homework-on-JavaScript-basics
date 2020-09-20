@@ -26,7 +26,7 @@ class AlarmClock {
      }
     
      getCurrentFormattedTime () {
-          let currentTime = new Date();
+          let currentTime = new Date ();
           let minutes = currentTime.getMinutes();
           let hours = currentTime.getHours();
           if (minutes <= 9) {
@@ -39,9 +39,9 @@ class AlarmClock {
      }
 
      start () {
-          let nowTime = this.getCurrentFormattedTime();
+          let nowTime = this.getCurrentFormattedTime;
           function checkClock (item) {
-               if (item.time === nowTime) {
+               if (item.time === nowTime()) {
                     return item.callback();
                } else {
                return false;
